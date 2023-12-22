@@ -1,0 +1,14 @@
+fileconfig:
+  pickleout: './output/trainingcircles.p'
+
+dataconfig:
+  seed: 0
+  size: 1000
+  trainperc: 0.9
+  downsample: False
+  reduceperc: 0.25
+  numclasses: 2
+  islarge: False
+  classarray: [0, 1]
+  categoryfeatures: []
+  ismulticlass: False

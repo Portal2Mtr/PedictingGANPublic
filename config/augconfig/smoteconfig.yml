@@ -1,0 +1,32 @@
+# Config file for WGAN in gan_training.py
+
+augconfig:
+  augname: 'SMOTE'
+  dataset: 'PIMA' # Options: CREDITFRAUD, PIMA, CIRCLES, BLOBS, BANKNOTE, HABERMAN
+  seed: 0
+  neighbors: 250
+  idn_perc: 0 # Overwritten
+  has_idn: False
+
+controlConfig:
+  do_training: False
+  do_testing: False
+  plot_tsne_sample: False
+  plot_loss: False
+  conduct_study: True
+  plot_study: False
+  validate_study: False
+
+outputconfig:
+  outputdir: './output/SMOTE/'
+  picklename: './output/SMOTE/SMOTEtrainingloss.p'
+  synthname: './output/trainingDataBitcoinLate2012.p'
+
+optunaconfig:
+  num_tests: 10
+  interval_steps: 10
+  # Link params to variables in list below
+  paramlist: ['self.augconfig["augconfig"]["neighbors"]']
+  params:
+    neighbors: [2, 5, 1]
+

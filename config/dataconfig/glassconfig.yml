@@ -1,0 +1,15 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/glass.csv'
+  pickleout: './output/trainingglass.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'GLASS'
+  trainperc: 0.8
+  islarge: False
+  has_idn: False
+  numclasses: null
+  classarray: [] # Multiclass in python file
+  categoryfeatures: [] # All Real
+  featureLabels: null

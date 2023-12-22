@@ -1,0 +1,16 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/yeast.csv'
+  idnFile: './data/idnData/yeast_IDN_0.2.csv'
+  pickleout: './output/trainingyeast.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'YEAST'
+  trainperc: 0.8
+  islarge: False
+  has_idn: False
+  numclasses: null
+  classarray: [] # Multiclass in python file
+  categoryfeatures: [] # All Real
+  featureLabels: ['Seq. Name', 'mcg', 'gvh', 'alm', 'mit', 'erl', 'pox', 'vac', 'nuc', 'Class']

@@ -1,0 +1,28 @@
+# Config file for WGAN in gan_training.py
+
+augconfig:
+  augname: 'CONTROL'
+  seed: 0
+  dataset: 'ELECTRIC'
+  idn_perc: 0 # Overwritten
+  has_idn: False
+
+controlConfig:
+  do_training: True
+  do_testing: False
+  plot_tsne_sample: False
+  plot_loss: False
+  conduct_study: False
+  plot_study: False
+  validate_study: False
+
+outputconfig:
+  outputdir: './output/CONTROL/'
+  picklename: './output/CONTROL/CONTROLtrainingloss.p'
+  synthname: './output/trainingDataBitcoinLate2012.p'
+
+optunaconfig:
+  num_tests: 250
+  # Link params to variables in list below
+  paramlist: []
+  params: []

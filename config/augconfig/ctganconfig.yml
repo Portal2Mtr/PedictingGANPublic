@@ -1,0 +1,66 @@
+# Config file for WGAN in gan_training.py
+
+augconfig:
+  augname: 'CTGAN'
+  # Options: CREDITFRAUD, PIMA, CIRCLES, BLOBS, BANKNOTE, HABERMAN
+  dataset: 'GLASS'
+  epochs: 300
+  seed: 0
+  idn_perc: 0 # Overwritten
+  has_idn: False
+
+ganconfig: # Added optuna parameters
+  batchsizediv: 1
+  gen:
+    layer_nodes: [250,200,150] # hidden layers
+    inneract: 'relu' # relu or sigmoid
+    outputact: 'tanh' # sigmoid or tanh
+    genlr: 0.00001
+    gendecay: 0.00001
+  disc:
+    layer_nodes: [250,200,150]
+    inneract: 'relu'
+    outputact: 'sigmoid' # sigmoid or tanh
+    disclr: 0.00001
+    discdecay: 0.00001
+    discsteps: 25
+
+controlConfig:
+  do_training: True
+  do_testing: False
+  plot_tsne_sample: False
+  plot_loss: False
+  conduct_study: False
+  plot_study: False
+  validate_study: False
+
+outputconfig:
+  outputdir: './output/CTGAN/'
+  picklename: './output/CTGAN/CTGANtrainingloss.p'
+  synthname: './output/trainingDataBitcoinLate2012.p'
+optunaconfig:
+  num_tests: 25
+  # Link params to variables in list below
+  paramlist: ['self.augconfig["ganconfig"]["gen"]["genadam"]',
+               'self.augconfig["ganconfig"]["disc"]["discadam"]',
+                'self.augconfig["ganconfig"]["gen"]["gendecay"]',
+                'self.augconfig["ganconfig"]["disc"]["gendecay"]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][0]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][1]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][2]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][0]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][1]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][2]']
+  params:
+    genadam: [0.000001, 0.001, 0.0001]
+    discadam: [0.000001, 0.001, 0.0001]
+    gendecay: [0.000001, 0.001, 0.0001]
+    discdecay: [0.000001, 0.001, 0.0001]
+    discsteps: [1, 50, 1]
+    genlayer1: [20, 1000, 10]
+    genlayer2: [15, 1000, 10]
+    genlayer3: [10, 1000, 10]
+    disclayer1: [20, 1000, 10]
+    disclayer2: [15, 1000, 10]
+    disclayer3: [10, 1000, 10]
+

@@ -1,0 +1,19 @@
+fileconfig:
+  dataFile: ['./data/nonBlockchainData/kdd99train.csv', './data/nonBlockchainData/kdd99test.csv']
+  pickleout: './output/trainingkdd.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'KDD99'
+  trainperc: 0.8 # Overridden in file, actually
+  downsample: False
+  islarge: False
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [0,1,2,3,4,7,8,9,10,11,12,13] # All category or discrete
+  todiscfeats: [1,3,5,6,7,8,9,13,14]
+  featureLabels: ['Age', 'Workclass', 'FinalWeight', 'Education', 'Education-num', 'MaritalStatus', 'Occupation', 'Relationship', 'Race', 'Sex', 'CapitalGain', 'CapitalLoss', 'HoursPerWeek', 'NativeCountry', 'Outcome']
+  ismulticlass: False

@@ -1,0 +1,56 @@
+# Config file for WGAN in gan_training.py
+
+supconfig:
+  dataset: 'PIMA' # Options: CREDIT, PIMA, BANKNOTE, HABERMAN, PORTOSEGURO, THYROID
+  seed: 0
+  learnrate: 0.1
+  n_est: 100
+  alpha1: 0.0001
+  alpha2: 0.0001
+  alpha3: 0.0001
+  svm_c: 1.0
+  eta0: 1.0
+  n_est_rf: 100
+  maxdepthdt: 30
+  minleafdt: 2
+  minsplitdt: 2
+  maxdepthgb: 10
+  minleafgb: 2
+  minsplitgb: 2
+  passagglearn: 1.0
+  augmode: 'CONTROL'
+  use_mlp: False
+  mlp:
+    layer_nodes: [50,10]
+    learn_alpha: 0.0001
+    mode: 'SGD' # SGD or EDL
+    num_cls: 2
+    n_inputs: 0
+    train_epochs: 500
+
+controlconfig:
+  do_training: False
+  do_testing: False
+  conduct_study: True
+  plot_study: False
+  plottwodim: False
+
+outputconfig:
+  outputdir: './output/SUP'
+  supname: './output/SUP/1'
+optunaconfig:
+  sampler_seed: 0
+  paramlist: []
+  bigparamlist: []
+  mlpparamlist: [ 'self.sup_config["supconfig"]["mlp"]["layer_nodes"][0]',
+                     'self.sup_config["supconfig"]["mlp"]["layer_nodes"][1]',
+                     'self.sup_config["supconfig"]["mlp"]["learn_alpha"]'
+  ]
+  params: []
+
+  bigparams: []
+
+  mlpparams:
+    layer1: [25, 300, 25]
+    layer2: [25, 400, 25]
+    learn_alpha: [ 0.001, 1.0, 0.001 ]

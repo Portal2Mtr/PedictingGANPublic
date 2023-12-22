@@ -1,0 +1,18 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/haberman.csv'
+  pickleout: './output/traininghaberman.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'HABERMAN'
+  trainperc: 0.8
+  downsample: False
+  islarge: False
+  has_idn: False
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 1
+  minlabel: 2
+  categoryfeatures: [0,1,2] # all are discrete
+  featureLabels: ['Age','Year of Operation','Num. Axillary','Survive > 5 years']

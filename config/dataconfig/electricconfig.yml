@@ -1,0 +1,18 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/electric_stability.csv'
+  pickleout: './output/trainingelectric.p'
+
+dataconfig:
+  header: 0
+  featOffset: 0
+  dataname: 'ELECTRIC'
+  trainperc: 0.8
+  downsample: False
+  islarge: False
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: []
+  featureLabels: null
+  ismulticlass: False

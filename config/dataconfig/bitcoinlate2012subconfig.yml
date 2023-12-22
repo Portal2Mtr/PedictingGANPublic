@@ -1,0 +1,17 @@
+fileconfig:
+  dataFile: './data/bitcoinData/finalWorkingDataset2012sub.csv'
+  idnFile: './data/idnData/bitcoinlate2012sub_IDN_0.2.csv'
+  pickleout: './output/trainingbitcoinlate2012sub.p'
+
+dataconfig:
+  header: 0
+  featOffset: 1
+  dataname: 'BITCOINLATE2012SUB'
+  trainperc: 0.8 # Overridden in file
+  islarge: True
+  has_idn: False
+  categoryfeatures: [0, 1]
+  featureLabels: []
+  numclasses: 2
+  classarray: [0,1]
+  ismulticlass: False

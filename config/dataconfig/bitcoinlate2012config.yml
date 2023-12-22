@@ -1,0 +1,21 @@
+fileconfig:
+  malcFile: './data/bitcoinData/late2012attacks.csv'
+  datafile: './data/bitcoinData/finalWorkingDataset2012.csv'
+  pickleout: './output/trainingbitcoinlate2012.p'
+
+dataconfig:
+  header: 0
+  featOffset: 1
+  dataname: 'BITCOINLATE2012'
+  trainperc: 0.8 # Overridden in file, actual value is 0.56
+  islarge: True
+  has_idn: False
+  inndownsample: 99975 # 0 for entire dataset
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [0, 1, 2]
+  todiscfeats: []
+  featureLabels: []
+  ismulticlass: False

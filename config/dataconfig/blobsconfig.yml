@@ -1,0 +1,14 @@
+fileconfig:
+  pickleout: './output/trainingblobs.p'
+
+dataconfig:
+  seed: 0
+  size: 1000
+  trainperc: 0.75
+  downsample: False
+  reduceperc: 0.5
+  numclasses: 2
+  islarge: False
+  classarray: [0, 1]
+  categoryfeatures: []
+  ismulticlass: False

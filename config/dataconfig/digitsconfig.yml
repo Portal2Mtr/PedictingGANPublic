@@ -1,0 +1,15 @@
+fileconfig:
+  dataFile: ['./data/nonBlockchainData/optdigits.tra', './data/nonBlockchainData/optdigits.tes']
+  pickleout: './output/trainingdigits.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'DIGITS'
+  trainperc: 0.8 # Overwritten
+  islarge: False
+  has_idn: False
+  numclasses: null
+  classarray: [] # Multiclass in python file
+  categoryfeatures: [] # All Real
+  featureLabels: null

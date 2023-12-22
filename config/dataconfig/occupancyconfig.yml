@@ -1,0 +1,18 @@
+fileconfig:
+  dataFile: ['./data/nonBlockchainData/occupancytraining.csv', './data/nonBlockchainData/occupancytesting.csv']
+  pickleout: './output/trainingoccupancy.p'
+
+dataconfig:
+  header: 0
+  featOffset: 0
+  dataname: 'OCCUPANCY'
+  trainperc: 0.8
+  downsample: False
+  islarge: True
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [2] # 5,6 are float
+  featureLabels: ["Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"]
+  ismulticlass: False

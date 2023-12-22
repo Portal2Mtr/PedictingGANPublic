@@ -1,0 +1,18 @@
+fileconfig:
+  dataFile: ['./data/nonBlockchainData/dota2train.csv', './data/nonBlockchainData/dota2test.csv']
+  pickleout: './output/trainingdota2.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'DOTA2'
+  trainperc: 0.8
+  downsample: True
+  islarge: True
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [] # All are Discrete
+  featureLabels: null # Get from csv
+  ismulticlass: False

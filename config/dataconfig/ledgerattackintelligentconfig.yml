@@ -1,0 +1,32 @@
+fileconfig:
+  dataFile: './data/ledgerAttackData/ledgerattackout'
+  pickleout: './output/trainingledgerattackintelligent.p'
+  synthOut: './data/ledgerAttackData/synthledgerattackout'
+
+dataconfig:
+  header: null
+  featOffset: 2
+  dataname: 'LEDGERATTACKINTELLIGENT'
+  trainperc: 0.5 # For optimizing VecGAN study
+  attacksplit: 90
+  downsample: False
+  islarge: False
+  attackType: 'INTELLIGENT'
+  constructseed: 0
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [0,1,7,8,9]
+  featureLabels: ['name',
+                    'utxo_indegree',
+                    'utxo_outdegree',
+                    'in_btc',
+                    'out_btc',
+                    'total_btc',
+                    'mean_in_btc',
+                    'mean_out_btc',
+                    'ledger_indegree',
+                    'ledger_outdegree',
+                    'is_attack']
+  ismulticlass: False

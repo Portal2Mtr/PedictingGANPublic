@@ -1,0 +1,19 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/creditcard.csv'
+  pickleout: './output/trainingcreditfraud.p'
+
+dataconfig:
+  header: 0
+  featOffset: 1
+  dataname: 'CREDITFRAUD'
+  trainperc: 0.8
+  downsample: False
+  islarge: True
+  numclasses: 2
+  has_idn: False
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [] # All are float
+  featureLabels: null # Get from csv
+  ismulticlass: False

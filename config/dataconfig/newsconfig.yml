@@ -1,0 +1,19 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/OnlineNewsPopularity.csv'
+  pickleout: './output/trainingnews.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'NEWS'
+  trainperc: 0.8
+  downsample: False
+  islarge: True
+  numclasses: 10
+  classarray: []
+  majlabel: 0
+  minlabel: 1
+  has_idn: False
+  categoryfeatures: [] # All float
+  todiscfeats: []
+  featureLabels: []

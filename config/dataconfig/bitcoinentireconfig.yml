@@ -1,0 +1,20 @@
+fileconfig:
+  malcFile: './data/bitcoinData/origMalcTrxnsFull.csv'
+  datafile: './data/bitcoinData/DG_out_MALTYPE.csv'
+  pickleout: './output/trainingbitcoinentire.p'
+
+dataconfig:
+  header: 0
+  featOffset: 1
+  dataname: 'BITCOINENTIRE'
+  trainperc: 0.8
+  islarge: True
+  totaldownsample: 1000   # 0 for entire dataset
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [0, 1]
+  todiscfeats: []
+  featureLabels: []
+  ismulticlass: False

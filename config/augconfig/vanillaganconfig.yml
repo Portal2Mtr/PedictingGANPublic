@@ -1,0 +1,59 @@
+# Config file for WGAN in gan_training.py
+
+augconfig:
+  augname: 'VANILLAGAN'
+  # Options: BITCOINLATE2012, CREDITFRAUD, PIMA, CIRCLES, BLOBS
+  dataset: 'PIMA'
+  epochs: 3000
+  seed: 0
+  idn_perc: 0 # Overwritten
+  has_idn: False
+
+ganconfig: # Added optuna parameters
+  batchsizediv: 5
+  dropout: 0.5
+  gen:
+    layer_nodes: [50,25,10] # hidden layers
+    inneract: 'relu' # relu or sigmoid
+    outputact: 'sigmoid' # sigmoid or tanh
+    genadam: 0.01
+  disc:
+    layer_nodes: [50,25,10]
+    inneract: 'relu'
+    outputact: 'sigmoid' # sigmoid or tanh
+    discadam: 0.001
+
+controlConfig:
+  do_training: True
+  do_testing: False
+  plot_tsne_sample: False
+  plot_loss: False
+  conduct_study: False
+  plot_study: False
+  validate_study: False
+
+outputconfig:
+  outputdir: './output/VANILLAGAN/'
+  picklename: './output/VANILLAGAN/VANILLAGANtrainingloss.p'
+  synthname: './output/trainingDataBitcoinLate2012.p'
+optunaconfig:
+  num_tests: 10
+  # Link params to variables in list below
+  paramlist: ['self.augconfig["ganconfig"]["gen"]["genadam"]',
+               'self.augconfig["ganconfig"]["disc"]["discadam"]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][0]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][1]',
+               'self.augconfig["ganconfig"]["gen"]["layer_nodes"][2]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][0]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][1]',
+               'self.augconfig["ganconfig"]["disc"]["layer_nodes"][2]']
+  params:
+    genadam: [0.001, 1.0, 0.001]
+    discadam: [0.001, 1.0, 0.001]
+    genlayer1: [ 25, 300, 25 ]
+    genlayer2: [ 25, 300, 25 ]
+    genlayer3: [ 25, 300, 25 ]
+    disclayer1: [ 25, 300, 25 ]
+    disclayer2: [ 25, 300, 25 ]
+    disclayer3: [ 25, 300, 25 ]
+

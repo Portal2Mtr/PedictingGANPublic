@@ -1,0 +1,19 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/banknote.csv'
+  pickleout: './output/trainingbanknote.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'BANKNOTE'
+  trainperc: 0.80
+  downsample: True
+  islarge: False
+  has_idn: False
+  numclasses: 2
+  classarray: [1, 2]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: []
+  featureLabels: ['Variance', 'Skewness', 'Curtosis', 'Entropy','Class']
+  ismulticlass: False

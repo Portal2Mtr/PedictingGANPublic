@@ -1,0 +1,85 @@
+# Config file for VECGAN in gan_training.py
+
+augconfig:
+  augname: 'RCGAN'
+  # Options: CREDITFRAUD, PIMA, CIRCLES, BLOBS, BANKNOTE, HABERMAN
+  dataset: 'ETHFRAUD'
+  epochs: 100
+  label_epochs: 300
+  # Options: SGD, EDL, BFA
+  gradmode: 'SGD' # Overridden for parameter study in parallel
+  minibatches: 250
+  csamplesdiv: 10
+  lambda_val: 0.01
+  clust_steps: 50
+  num_critic: 20
+  min_dist: 3.0
+  recordEigen: False
+  eigenseed: 0
+  idn_perc: 0 # Overwritten
+  has_idn: True
+
+ganconfig:
+  batchsizediv: 1
+  dropout: 0.5
+  gen:
+    layer_nodes: [100,50,10] # hidden layers
+    inneract: 'relu' # relu or sigmoid
+    outputact: 'sigmoid' # sigmoid or tanh
+    learnrate:  0.001
+  disc:
+    layer_nodes: [100,50,10]
+    inneract: 'relu'
+    outputact: 'linear' # Overwritten
+    learnrate: 0.001
+    num_clust: 0 # Not used
+  label:
+    layer_nodes: []
+    inneract: 'relu'
+    outputact: 'sigmoid' # Overwritten
+    learnrate: 0.001
+
+controlConfig:
+  do_training: False
+  do_testing: False
+  plot_tsne_sample: False
+  plot_loss: False
+  conduct_study: True
+  plot_study: False
+  validate_study: False
+
+
+outputconfig:
+  outputdir: './output/RCGAN/'
+  picklename: './output/RCGAN/VECGANtrainingloss.p'
+  synthname: './output/trainingDataBitcoinLate2012.p'
+optunaconfig:
+  num_tests: 10
+  paramlist: ['self.augconfig["ganconfig"]["disc"]["numlog"]',
+              'self.augconfig["ganconfig"]["gen"]["numlog"]',
+              'self.augconfig["ganconfig"]["disc"]["varmult"]',
+              'self.augconfig["ganconfig"]["gen"]["varmult"]',
+              'self.augconfig["ganconfig"]["gen"]["learnrate"]',
+              'self.augconfig["augconfig"]["lambda_val"]',
+              'self.augconfig["ganconfig"]["disc"]["num_critic"]',
+              'self.augconfig["ganconfig"]["disc"]["learnrate"]',
+              'self.augconfig["ganconfig"]["label"]["learnrate"]',
+              'self.augconfig["ganconfig"]["gen"]["layer_nodes"][0]',
+              'self.augconfig["ganconfig"]["gen"]["layer_nodes"][1]',
+              'self.augconfig["ganconfig"]["gen"]["layer_nodes"][2]',
+              'self.augconfig["ganconfig"]["disc"]["layer_nodes"][0]',
+              'self.augconfig["ganconfig"]["disc"]["layer_nodes"][1]',
+              'self.augconfig["ganconfig"]["disc"]["layer_nodes"][2]']
+  params:
+    genlearnrate: [0.001, 0.1, 0.001]
+    lambda_val: [0.1, 1.0,0.1]
+    numcritic: [1, 30, 1]
+    disclearnrate: [0.001, 1.0, 0.001]
+    labellearnrate: [0.001, 1.0, 0.001]
+    genlayer1: [ 25, 300, 25 ]
+    genlayer2: [ 25, 300, 25 ] # Top layers overridden by preceeding layer in optuna
+    genlayer3: [ 25, 300, 25 ]
+    disclayer1: [ 25, 300, 25 ]
+    disclayer2: [ 25, 300, 25 ] # Top layers overridden by  preceeding layer in optuna
+    disclayer3: [ 25, 300, 25 ]
+

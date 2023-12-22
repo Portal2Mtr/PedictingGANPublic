@@ -1,0 +1,18 @@
+fileconfig:
+  dataFile: './data/nonBlockchainData/pima.csv'
+  pickleout: './output/trainingpimadiabetes.p'
+
+dataconfig:
+  header: null
+  featOffset: 0
+  dataname: 'PIMA'
+  trainperc: 0.8
+  downsample: False
+  islarge: False
+  has_idn: True
+  numclasses: 2
+  classarray: [0, 1]
+  majlabel: 0
+  minlabel: 1
+  categoryfeatures: [0,1,2,3,4,7] # 5,6 are float
+  featureLabels: ['Pregnancies', 'Glucose', 'Bloodpressure', 'SkinThickness', 'Insulin','BMI', 'DiabetesPedigree','Age','Outcome']
